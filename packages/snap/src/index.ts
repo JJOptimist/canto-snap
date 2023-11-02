@@ -1,5 +1,5 @@
 import type { OnRpcRequestHandler } from '@metamask/snaps-types';
-import { panel, text } from '@metamask/snaps-ui';
+import { panel, text, heading} from '@metamask/snaps-ui';
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -19,6 +19,7 @@ export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
         params: {
           type: 'confirmation',
           content: panel([
+            heading('Ponte Snap'),
             text(`Hello, **${origin}**!`),
             text('This custom confirmation is just for display purposes.'),
             text(
