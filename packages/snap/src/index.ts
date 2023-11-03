@@ -6,7 +6,10 @@ import { panel, text, heading } from '@metamask/snaps-ui';
  *
  * @returns The Ethereum account address.
  */
-
+async function getCanto() {
+  const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=canto'); 
+  return response.text();
+}
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -21,16 +24,22 @@ import { panel, text, heading } from '@metamask/snaps-ui';
 export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
   switch (request.method) {
     case 'hello':
+      return getCanto().then(cantos => {
+        
+        const cantoData = JSON.parse(cantos);
+        const cantoPrice = cantoData[0].current_price;
+      
       return snap.request({
         method: 'snap_dialog',
         params: {
           type: 'confirmation',
           content: panel([
-            heading('Ponte Snap'),
+            heading('Canto Snap'),
             text(`Hello, **${origin}**!`),
-            text('This custom confirmation is just for display purposes.'),
+            text(`🤑Canto Price: **${cantoPrice}** `),
           ]),
         },
+      });
       });
   }
 };
