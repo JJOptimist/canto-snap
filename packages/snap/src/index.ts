@@ -1,5 +1,5 @@
 import type { OnRpcRequestHandler } from '@metamask/snaps-types';
-import { panel, text, heading } from '@metamask/snaps-ui';
+import { panel, text, heading, divider, copyable } from '@metamask/snaps-ui';
 
 /**
  * Function to retrieve and display the Ethereum account address.
@@ -28,16 +28,25 @@ export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
         
         const cantoData = JSON.parse(cantos);
         const cantoPrice = cantoData[0].current_price;
+        const priceChange = cantoData[0].price_change_percentage_24h;
+        const cantoRank = cantoData[0].market_cap_rank;
       
       return snap.request({
         method: 'snap_dialog',
         params: {
           type: 'confirmation',
           content: panel([
-            heading('Canto Snap'),
+            heading('Canto Snap ©️'),
             text(`Hello, **${origin}**!`),
-            text(`🤑Canto Price: **${cantoPrice}** `),
+            text(`🔰 Rank: **${cantoRank}**`),
+            text(`💰 Canto Price: **${cantoPrice}** `),
+            text(`📈 24h Change: **${priceChange}%**`),
+            divider(),
+            text(`🛠️ Contribute to **Canto** at:`),
+            copyable(`canto.build`)
+
           ]),
+        
         },
       });
       });

@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
-  "description": "Bridge between anonimity and trust.",
-  "proposedName": "Ponte Snap",
+  "description": "Canto insights.",
+  "proposedName": "Canto Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/template-snap-monorepo.git"
   },
   "source": {
-    "shasum": "lOoFo5omLimhWOnGBKj9P+s6H7BBCsiSbPQSDm5xfbY=",
+    "shasum": "qPpOFhrg7bqZANyd7fwvun3TJkPZnGmafaZC5Lh61aU=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
