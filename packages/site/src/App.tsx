@@ -14,6 +14,12 @@ const Wrapper = styled.div`
   max-width: 100vw;
 `;
 
+const linkElement = document.createElement('link');
+linkElement.rel = 'stylesheet';
+linkElement.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200';
+
+document.head.appendChild(linkElement);
+
 export type AppProps = {
   children: ReactNode;
 };

@@ -5,7 +5,7 @@ import {
   ConnectButton,
   InstallFlaskButton,
   ReconnectButton,
-  SendHelloButton,
+  LoadStatsButton,
   Card,
 } from '../components';
 import { defaultSnapOrigin } from '../config';
@@ -14,7 +14,7 @@ import {
   connectSnap,
   getSnap,
   isLocalSnap,
-  sendHello,
+  loadStats,
   shouldDisplayReconnectButton,
 } from '../utils';
 
@@ -41,7 +41,7 @@ const Heading = styled.h1`
 `;
 
 const Span = styled.span`
-  color: ${(props) => props.theme.colors.primary?.default};
+  color: #06fc99 ;
 `;
 
 const Subtitle = styled.p`
@@ -124,9 +124,9 @@ const Index = () => {
     }
   };
 
-  const handleSendHelloClick = async () => {
+  const handleLoadStatsClick = async () => {
     try {
-      await sendHello();
+      await loadStats();
     } catch (error) {
       console.error(error);
       dispatch({ type: MetamaskActions.SetError, payload: error });
@@ -136,23 +136,15 @@ const Index = () => {
   return (
     <Container>
       <Heading>
-        Welcome to <Span>template-snap</Span>
+      <Span>Canto Stats Snap</Span>
       </Heading>
-      <Subtitle>
-        Get started by editing <code>src/index.ts</code>
-      </Subtitle>
       <CardContainer>
-        {state.error && (
-          <ErrorMessage>
-            <b>An error happened:</b> {state.error.message}
-          </ErrorMessage>
-        )}
         {!isMetaMaskReady && (
           <Card
             content={{
               title: 'Install',
               description:
-                'Snaps is pre-release software only available in MetaMask Flask, a canary distribution for developers with access to upcoming features.',
+                'Install Canto Snap',
               button: <InstallFlaskButton />,
             }}
             fullWidth
@@ -163,7 +155,7 @@ const Index = () => {
             content={{
               title: 'Connect',
               description:
-                'Get started by connecting to and installing the example snap.',
+                'Get started by connecting to and installing the snap.',
               button: (
                 <ConnectButton
                   onClick={handleConnectClick}
@@ -174,30 +166,15 @@ const Index = () => {
             disabled={!isMetaMaskReady}
           />
         )}
-        {shouldDisplayReconnectButton(state.installedSnap) && (
-          <Card
-            content={{
-              title: 'Reconnect',
-              description:
-                'While connected to a local running snap this button will always be displayed in order to update the snap if a change is made.',
-              button: (
-                <ReconnectButton
-                  onClick={handleConnectClick}
-                  disabled={!state.installedSnap}
-                />
-              ),
-            }}
-            disabled={!state.installedSnap}
-          />
-        )}
+        
         <Card
           content={{
-            title: 'Send Hello message',
+            title: 'Load Stats',
             description:
-              'Display a custom message within a confirmation screen in MetaMask.',
+              'Canto Info',
             button: (
-              <SendHelloButton
-                onClick={handleSendHelloClick}
+              <LoadStatsButton
+                onClick={handleLoadStatsClick}
                 disabled={!state.installedSnap}
               />
             ),
@@ -209,14 +186,6 @@ const Index = () => {
             !shouldDisplayReconnectButton(state.installedSnap)
           }
         />
-        <Notice>
-          <p>
-            Please note that the <b>snap.manifest.json</b> and{' '}
-            <b>package.json</b> must be located in the server root directory and
-            the bundle must be hosted at the location specified by the location
-            field.
-          </p>
-        </Notice>
       </CardContainer>
     </Container>
   );
