@@ -1,9 +1,12 @@
 import type { ComponentProps } from 'react';
 import styled from 'styled-components';
+import 'material-icons/css/material-icons.css';
 
 import { ReactComponent as FlaskFox } from '../assets/flask_fox.svg';
 import type { MetamaskState } from '../hooks';
 import { shouldDisplayReconnectButton } from '../utils';
+import reloadsvg from '../assets/reload.svg';
+import { ReloadSvg } from './ReloadSvg';
 
 const Link = styled.a`
   display: flex;
@@ -96,9 +99,7 @@ export const ReconnectButton = (props: ComponentProps<typeof Button>) => {
 };
 
 export const LoadStatsButton = (props: ComponentProps<typeof Button>) => {
-  return <Button {...props}><span className="material-symbols-outlined">
-  sync
-  </span>Load stats</Button>;
+  return <Button {...props}><ReloadSvg size={24} color="#06FC99" />Load Stats</Button>;
 };
 
 export const HeaderButtons = ({

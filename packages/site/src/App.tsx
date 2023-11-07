@@ -1,7 +1,7 @@
 import type { FunctionComponent, ReactNode } from 'react';
 import { useContext } from 'react';
 import styled from 'styled-components';
-
+import 'material-icons/css/material-icons.css';
 import { Footer, Header } from './components';
 import { GlobalStyle } from './config/theme';
 import { ToggleThemeContext } from './Root';
@@ -14,11 +14,6 @@ const Wrapper = styled.div`
   max-width: 100vw;
 `;
 
-const linkElement = document.createElement('link');
-linkElement.rel = 'stylesheet';
-linkElement.href = 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200';
-
-document.head.appendChild(linkElement);
 
 export type AppProps = {
   children: ReactNode;
