@@ -1,7 +1,7 @@
 import type { FunctionComponent, ReactNode } from 'react';
 import { useContext } from 'react';
 import styled from 'styled-components';
-import 'material-icons/css/material-icons.css';
+
 import { Footer, Header } from './components';
 import { GlobalStyle } from './config/theme';
 import { ToggleThemeContext } from './Root';
@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   min-height: 100vh;
   max-width: 100vw;
 `;
-
 
 export type AppProps = {
   children: ReactNode;

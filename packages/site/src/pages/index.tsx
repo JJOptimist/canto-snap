@@ -22,7 +22,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   flex: 1;
   margin-top: 7.6rem;
   margin-bottom: 7.6rem;
@@ -42,7 +42,7 @@ const Heading = styled.h1`
 `;
 
 const Span = styled.span`
-  color: #06fc99 ;
+  color: #06fc99;
 `;
 
 const Subtitle = styled.p`
@@ -137,15 +137,14 @@ const Index = () => {
   return (
     <Container>
       <Heading>
-      <Span>Canto Stats Snap</Span>
+        <Span>Canto Stats Snap</Span>
       </Heading>
       <CardContainer>
         {!isMetaMaskReady && (
           <Card
             content={{
               title: 'Install',
-              description:
-                'Install Canto Snap',
+              description: 'Install Canto Snap',
               button: <InstallFlaskButton />,
             }}
             fullWidth
@@ -167,12 +166,11 @@ const Index = () => {
             disabled={!isMetaMaskReady}
           />
         )}
-        
+
         <Card
           content={{
             title: 'Load Stats',
-            description:
-              'Canto Info',
+            description: 'Canto Info',
             button: (
               <LoadStatsButton
                 onClick={handleLoadStatsClick}
