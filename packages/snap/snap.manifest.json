@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
-  "description": "Canto insights.",
-  "proposedName": "Canto Snap",
+  "description": "EasyWork Snap",
+  "proposedName": "EASy Work Snap",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/template-snap-monorepo.git"
   },
   "source": {
-    "shasum": "qPpOFhrg7bqZANyd7fwvun3TJkPZnGmafaZC5Lh61aU=",
+    "shasum": "ACcRSxnqMjj5/2RxkZKqnbPc2Op7oCSfeNh/bc/hgLc=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

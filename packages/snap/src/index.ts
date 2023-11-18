@@ -1,6 +1,7 @@
 import type { OnRpcRequestHandler } from '@metamask/snaps-types';
 import { panel, text, heading, divider, copyable } from '@metamask/snaps-ui';
-
+import jobsvg from './job.svg';
+import { image } from '@metamask/snaps-ui';
 /**
  * Function to retrieve and display the Ethereum account address.
  *
@@ -10,6 +11,12 @@ async function getCanto() {
   const response = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=canto'); 
   return response.text();
 }
+
+const jobs = [
+  "EAS 1",
+  "EAS 2",
+  "EAS 3"
+]
 
 /**
  * Handle incoming JSON-RPC requests, sent through `wallet_invokeSnap`.
@@ -30,20 +37,19 @@ export const onRpcRequest: OnRpcRequestHandler = ({ origin, request }) => {
         const cantoPrice = cantoData[0].current_price;
         const priceChange = cantoData[0].price_change_percentage_24h;
         const cantoRank = cantoData[0].market_cap_rank;
+        
       
       return snap.request({
         method: 'snap_dialog',
         params: {
           type: 'confirmation',
           content: panel([
-            heading('Canto Snap ©️'),
+            heading('Job Stats'),
             text(`Hello, **${origin}**!`),
-            text(`🔰 Rank: **${cantoRank}**`),
-            text(`💰 Canto Price: **${cantoPrice}** `),
-            text(`📈 24h Change: **${priceChange}%**`),
+            image(jobsvg, { width: '100px', height: '100px' }),
+            ...jobs.map((job) => text(`Job: **${job}**`)),
             divider(),
-            text(`🛠️ Contribute to **Canto** at:`),
-            copyable(`canto.build`)
+            text(`Total Earnings: **$${cantoPrice}**`)
 
           ]),
         
