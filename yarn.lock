@@ -4518,16 +4518,16 @@ __metadata:
   linkType: hard
 
 "@metamask/snaps-sdk@npm:^1.0.0":
-  version: 1.1.0
-  resolution: "@metamask/snaps-sdk@npm:1.1.0"
+  version: 1.2.0
+  resolution: "@metamask/snaps-sdk@npm:1.2.0"
   dependencies:
     "@metamask/key-tree": ^9.0.0
-    "@metamask/providers": ^13.0.0
+    "@metamask/providers": ^14.0.1
     "@metamask/rpc-errors": ^6.1.0
-    "@metamask/utils": ^8.1.0
+    "@metamask/utils": ^8.2.1
     is-svg: ^4.4.0
     superstruct: ^1.0.3
-  checksum: bd4dd25959bab214c3f9c0235e3b94740f900ced64b0ca09afbdedff8d927ff127b8d009fed285359be1c057eb57dd27aa824a6b331026baae7c674bee75c6e2
+  checksum: ce32fce94c690a2ba236d4584e78111baf1b7527113f411bce2768f76f0c3b7cd1cd56684ffc5d941dd06b46065466148b1872126fd084f94c481937d06fc51d
   languageName: node
   linkType: hard
 
@@ -4709,7 +4709,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@metamask/utils@npm:^8.2.0":
+"@metamask/utils@npm:^8.2.0, @metamask/utils@npm:^8.2.1":
   version: 8.2.1
   resolution: "@metamask/utils@npm:8.2.1"
   dependencies:
