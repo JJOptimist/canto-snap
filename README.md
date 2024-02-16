@@ -17,9 +17,7 @@ a canary distribution for developers that provides access to upcoming features.
 Clone the template-snap repository [using this template](https://github.com/MetaMask/template-snap-monorepo/generate)
 and set up the development environment:
 
-```shell
-yarn install && yarn start
-```
+
 
 ## Cloning
 
