@@ -1,3 +1,5 @@
+# Metamask Snap for Canto 
+
 # @metamask/template-snap-monorepo
 
 This repository demonstrates how to develop a snap with TypeScript. For detailed
