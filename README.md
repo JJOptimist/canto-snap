@@ -34,7 +34,6 @@ not work properly outside the MetaMask GitHub organization.
 If you don't wish to use any of the existing GitHub actions in this repository,
 simply delete the `.github/workflows` directory.
 
-## Contributing
 
 ### Testing and Linting
 
